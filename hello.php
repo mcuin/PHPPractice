@@ -8,5 +8,12 @@
 		<?php 
 			echo "Hello World!";
 		?>
+		<?php 
+			#Single line comment
+			//Single line comment
+			/*Multi
+			line
+			comment*/
+		?>
 	</body>
 </html> 
