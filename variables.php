@@ -42,6 +42,16 @@
 
 			myTest3();
 			echo "$c<br>";
+
+			function myTest4() {
+				static $d = 0;
+				echo "$d<br>";
+				$d++;
+			}
+
+			myTest4();
+			myTest4();
+			myTest4();
 		?>
 	</body>
 </html>
