@@ -40,18 +40,27 @@
 					$nameErr = "Name is required.";
 				} else {
 					$name = testInput($_POST["name"]);
+					if (!preg_math("/^[a-zA-Z ]*$/", $name)) {
+						$namErr = "Only letters and white space allowed.";
+					}
 				}
 				
 				if (empty($_POST["email"])) {
 					$emailErr = "Email is required.";
 				} else {
 					$email = testInput($_POST["email"]);
+					if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+						$emailErr = "Invalid email format.";
+					}
 				}
 
 				if (empty($_POST["website"])) {
 					$webErr = "";
 				} else {
 					$website = testInput($_POST["website"]);
+					if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i", $website)) {
+						$webErr = "Malformed web address.";
+					}
 				}
 
 				if (empty($_POST["comment"])) {
