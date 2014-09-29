@@ -5,21 +5,21 @@
 		<title>PHP Require</title>
 	</head>
 	<body>
-		<form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
-			Name: <input type="text" name="name">
+		<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+			Name: <input type="text" name="name" value="<?php echo $name; ?>">
 			<span class="error">* <?php echo $nameErr; ?></span>
 			<br>
-			Email: <input type="email" name="email">
+			Email: <input type="email" name="email" value="<?php echo $email; ?>">
 			<span class="error">* <?php echo $emailErr; ?></span>
 			<br>
-			Website: <input type="url" name="website">
+			Website: <input type="url" name="website" value="<?php echo $website; ?>">
 			<span class="error"><?php echo $webErr; ?></span>
 			<br>
-			Comment: <textarea name="comment" rows="5" cols="40"></textarea>
+			Comment: <textarea name="comment" rows="5" cols="40"><?php echo $comment; ?></textarea>
 			<br>
 			Gender:
-			<input type="radio" name="gender" value="female">Female
-			<input type="radio" name="gender" value="male">Male
+			<input type="radio" name="gender" <?php if (isset($gender) && $gender == "female") echo "checked"; ?> value="female" >Female
+			<input type="radio" name="gender" <?php if (isset($gender) && $gender == "male") echo "checked"; ?> value="male" >Male
 			<span class="error">* <?php echo $genderErr; ?></span>
 			<br>
 			<input type="submit" name="submit" value="submt">
