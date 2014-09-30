@@ -6,6 +6,12 @@
 	} else {
 		$_SESSION['views'] = 1;
 	}
+
+	if (isset($_SESSION['views'])) {
+		unset ($_SESSION['views']);
+	}
+
+	session_destory();
 ?>
 
 <html>
